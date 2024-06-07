@@ -14,10 +14,10 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
 
   // function handleSearch(term: string) {
-    const handleSearch = useDebouncedCallback((e: React.ChangeEvent<HTMLInputElement>)=>{
-      // console.log(`Searching... ${term}`);
+    const handleSearch = useDebouncedCallback((term) => {
+      console.log(`Searching... ${term}`);
+
     const params = new URLSearchParams(searchParams);
-    const term: string =e.target.value
     params.set('page', '1');
     if (term) {
       params.set('query', term);
@@ -36,13 +36,11 @@ export default function Search({ placeholder }: { placeholder: string }) {
       <input
         className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
         placeholder={placeholder}
-        // onChange={(e) => {
-        //   handleSearch(e.target.value);
-        // }}
-        onChange={handleSearch}
-        defaultValue={searchParams.get('query')?.toString()}
+        onChange={(e) => {
+          handleSearch(e.target.value);
+        }}
       />
       <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
     </div>
   );
-}
+};
