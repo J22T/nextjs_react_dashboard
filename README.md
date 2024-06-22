@@ -1,14 +1,12 @@
-# Acme dashboard full web application.
-
 ![Acme full web application](https://nextjs.org/_next/image?url=%2Flearn%2Fcourse-explainer.png&w=750&q=75&dpl=dpl_Ejtt9BCyCFNeRJdBoVsM9Es9x8xe)
 
-## Next.js App Router Course - Starter
+# Next.js App Router Course - Starter
 
 This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
 
 For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
 
-## Creating a new project
+# Creating a new project
 
 ```bash
 npx create-next-app@latest nextjs-dashboard --use-npm --example "https://
@@ -18,12 +16,12 @@ github.com/vercel/next-learn/tree/main/dashboard/starter-example"
 
 This command uses create-next-app, a Command Line Interface (CLI) tool that sets up a Next.js application for you. In the command above, you're also using the --example flag with the starter example for this course.
 
-## Folder structure
+# Folder structure
 
-**/app:** Contains all the routes, components, and logic for your application, this is where you'll be mostly working from.
-**/app/lib:** Contains functions used in your application, such as reusable utility functions and data fetching functions.
-**/app/ui:** Contains all the UI components for your application, such as cards, tables, and forms. To save time, we've pre-styled these components for you.
-**/public:** Contains all the static assets for your application, such as images.
+**/app:** Contains all the routes, components, and logic for your application, this is where you'll be mostly working from.  
+**/app/lib:** Contains functions used in your application, such as reusable utility functions and data fetching functions.  
+**/app/ui:** Contains all the UI components for your application, such as cards, tables, and forms. To save time, we've pre-styled these components for you.  
+**/public:** Contains all the static assets for your application, such as images.  
 **/scripts/:** Contains a file that you'll use to populate your database in a later chapter.
 
 Config Files: You'll also notice config files such as next.config.js at the root of your application. Most of these files are created and pre-configured when you start a new project using create-next-app.
@@ -34,13 +32,13 @@ Config Files: You'll also notice config files such as next.config.js at the root
 
 By using **TypeScript**, you can ensure you don't accidentally pass the wrong data format to your components or database, like passing a string to amount instead of a number.
 
-### If you're a TypeScript developer:
+## If you're a TypeScript developer:
 
 - Next.js detects if your project uses TypeScript and automatically installs the necessary packages and configuration. Next.js also comes with a TypeScript plugin for your code editor, to help with auto-completion and type-safety.
 
 - We're manually declaring the data types, but for better type-safety, we recommend tools like Prisma, which automatically generates types based on your database schema.
 
-## Running the development server
+# Running the development server
 
 Run npm i or npm install to install the project's packages.
 
@@ -56,7 +54,7 @@ npm run dev
 
 ```npm run dev``` starts your Next.js development server on port 3000. Let's check to see if it's working. Open http://localhost:3000 on your browser.
 
-## CSS Styling
+# CSS Styling
 
 In this chapter...
 
@@ -68,7 +66,7 @@ Here are the topics we’ll cover
 
 - How to conditionally add class names with the clsx utility package.
 
-### Global styles
+## Global styles
 
 **/app/ui:** If you look inside folder, you'll see a file called global.css. You can use this file to add CSS rules to all the routes in your application - such as CSS reset rules, site-wide styles for HTML elements like links, and more.
 
@@ -87,7 +85,7 @@ If you take a look inside global.css, you'll notice some @tailwind directives.
 @tailwind utilities;
 ```
 
-### Tailwind
+## Tailwind
 
 Tailwind is a CSS framework that speeds up the development process by allowing you to quickly write utility classes directly in your JSX markup. The CSS styles are shared globally, but each utility is singularly focused and applied to each individual element. This means you don't have to worry about style collisions, maintaining separate stylesheets, or your CSS bundle size growing as your application grows.
 
@@ -99,7 +97,7 @@ If you look at /app/page.tsx, you'll see that we're using Tailwind classes in th
 <div className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transparent border-r-transparent"/>
 ```
 
-### CSS Modules
+## CSS Modules
 
 If you prefer writing traditional CSS rules or keeping your styles separate from your JSX, CSS Modules are a great alternative.
 
@@ -120,7 +118,7 @@ Here's how you could create the same shape from the quiz above using CSS modules
 
 > Provide a way to make CSS classes locally scoped to components by default, enabling better modularity and reducing the risk of styling conflicts.
 
-### Library clsx
+## Library clsx
 
 There may be cases where you may need to conditionally style an element based on state or some other condition.
 
@@ -147,7 +145,7 @@ export default function InvoiceStatus({ status }: { status: string }) {
 )}
 ```
 
-## Optimizing Fonts and Images
+# Optimizing Fonts and Images
 
 In the previous chapter, you learned how to style your Next.js application. Let's continue working on your home page by adding a custom font and a hero image.
 
@@ -162,7 +160,7 @@ Here are the topics we’ll cover
 - ✅ How fonts and images are optimized in Next.js.
 
 
-### Why optimize fonts?
+## Why optimize fonts?
 
 Fonts play a significant role in the design of a website, but using custom fonts in your project can affect performance if the font files need to be fetched and loaded.
 
@@ -172,11 +170,11 @@ Cumulative Layout Shift is a metric used by Google to evaluate the performance a
 
 Next.js automatically optimizes fonts in the application when you use the next/font module. It does so by downloading font files at build time and hosting them with your other static assets. This means when a user visits your application, there are no additional network requests for fonts which would impact performance.
 
-### Adding a primary font
+## Adding a primary font
 
 In your /app/ui folder, create a new file called fonts.ts. You'll use this file to keep the fonts that will be used throughout your application.
 
-Import the Inter font from the next/font/google module - this will be your primary font.
+Import the Inter font from the next/font/google module - this will be your primary font.  
 Then, specify what subset you'd like to load. In this case, 'latin':
 
 ```tsx
@@ -204,7 +202,7 @@ By adding Inter to the <body> element, the font will be applied throughout your 
 
 ---
 
-### Why optimize images?
+## Why optimize images?
 
 Next.js can serve static assets, like images, under the top-level /public folder. Files inside /public can be referenced in your application.
 
@@ -225,7 +223,7 @@ However, this means you have to manually:
 
 Instead of manually handling these optimizations, you can use the ```next/image``` component to automatically optimize your images.
 
-### The \<Image\> component
+## The \<Image\> component
 
 The \<Image\> Component is an extension of the HTML \<img\> tag, and comes with automatic image optimization, such as:
 
@@ -234,7 +232,7 @@ The \<Image\> Component is an extension of the HTML \<img\> tag, and comes with 
 - Lazy loading images by default (images load as they enter the viewport).
 - Serving images in modern formats, like WebP and AVIF, when the browser supports it.
 
-### Adding the desktop hero image
+## Adding the desktop hero image
 
 Let's swap the \<img\> tag for an \<Image\> component.
 
@@ -252,7 +250,7 @@ In your /app/page.tsx file, import the component from next/image. Then, add the 
 
 Here, you're setting the width to 1000 and height to 760 pixels. It's good practice to set the width and height of your images to avoid layout shift, these should be an aspect ratio identical to the source image.
 
-### Adding the mobile hero image
+## Adding the mobile hero image
 
 Now it's your turn again! Under the image you've just added, add another <Image> component for the mobile hero.
 
@@ -270,7 +268,7 @@ Now it's your turn again! Under the image you've just added, add another <Image>
     />
 ```
 
-### Recommended reading
+## Recommended reading
 
 There's a lot more to learn about these topics, including optimizing remote images and using local font files. If you'd like to dive deeper into fonts and images, see:
 
@@ -282,7 +280,7 @@ There's a lot more to learn about these topics, including optimizing remote imag
 
 ---
 
-## Creating Layouts and Pages
+# Creating Layouts and Pages
 
 So far, your application only has a home page. Let's learn how you can create more routes with layouts and pages.
 
@@ -298,7 +296,7 @@ Here are the topics we’ll cover
 
 - Understand what colocation, partial rendering, and root layout are.
 
-### Nested routing
+## Nested routing
 
 Next.js uses **file-system routing** where folders are used to create nested routes. Each folder represents a route segment that maps to a URL segment.
 
@@ -312,7 +310,7 @@ To create a nested route, you can nest folders inside each other with their own 
 
 /app/login/page.tsx is associated with the /login path. Let's create the page to see how it works!
 
-### Creating the dashboard page
+## Creating the dashboard page
 
 Create a new folder called dashboard inside /app. Then, create a new page.tsx file inside the dashboard folder with the following content:
 
@@ -321,6 +319,7 @@ export default function Page() {
   return <p>Dashboard Page</p>;
 }
 ```
+
 Now, make sure that the development server is running and visit http://localhost:3000/dashboard.
 
 Let's practice creating more routes. In your dashboard, create two more pages:
@@ -333,8 +332,7 @@ You should have the following folder structure:
 
 ![folder structure](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Frouting-solution.png&w=1920&q=75&dpl=dpl_9EKEbD7jAviauyTffgoEyAkQSGtP)
 
-
-### Creating the dashboard layout
+## Creating the dashboard layout
 
 Dashboards also have some sort of navigation that is shared across multiple pages. In Next.js, you can use a special layout.tsx file to create UI that is shared between multiple pages. Let's create a layout for the dashboard!
 
@@ -363,8 +361,7 @@ This layout is required and is called a root layout. Any UI you add to the root 
 
 Since the new layout you've just created (/app/dashboard/layout.tsx) is unique to the dashboard pages, you don't need to add any UI to the root layout above.
 
-
-## Navigating Between Pages
+# Navigating Between Pages
 
 In the previous chapter, you created the dashboard layout and pages. Now, let's add some links to allow users to navigate between the dashboard pages.
 
@@ -378,7 +375,7 @@ Here are the topics we’ll cover
 
 - How client-side navigation works in Next.js.
 
-### Why optimize navigation?
+## Why optimize navigation?
 
 To link between pages, you'd traditionally use the \<a\> HTML element. At the moment, the sidebar links use \<a\> elements, but notice what happens when you navigate between the home, invoices, and customers pages on your browser.
 
@@ -386,17 +383,17 @@ Did you see it?
 
 There's a full page refresh on each page navigation!
 
-#### The \<Link\> component
+### The \<Link\> component
 
 In Next.js, you can use the Link Component to link between pages in your application. <Link> allows you to do client-side navigation with JavaScript. Although parts of your application are rendered on the server, navigation is faster and there's no full page refresh - making it feel more like a web app.
 
-#### Pattern: Showing active links
+### Pattern: Showing active links
 
 A common UI pattern is to show an active link to indicate to the user what page they are currently on. To do this, you need to get the user's current path from the URL. Next.js provides a hook called usePathname() that you can use to check the path.
 
 Since [usePathname()](https://nextjs.org/docs/app/api-reference/functions/use-pathname) is a hook, you'll need to turn nav-links.tsx into a Client Component. Add React's ```"use client" ``` directive to the top of the file, then import usePathname() from next/navigation:
 
-### Automatic code-splitting and prefetching
+## Automatic code-splitting and prefetching
 
 In addition to client-side navigation, Next.js automatically code splits your application by route segments. This is different from a traditional SPA, where the browser loads all your application code on initial load.
 
@@ -406,7 +403,7 @@ Furthermore, in production, whenever \<Link\> components appear in the browser's
 
 ---
 
-## Setting Up Your Database
+# Setting Up Your Database
 
 Before you can continue working on your dashboard, you'll need some data. In this chapter, you'll be setting up a PostgreSQL database using @vercel/postgres. If you're already familiar with PostgreSQL and would prefer to use your own provider, you can skip this chapter and set it up on your own. Otherwise, let's continue!
 
@@ -418,7 +415,7 @@ Here are the topics we’ll cover
 
 - Seed the database with initial data.
 
-### Create a Postgres database
+## Create a Postgres database
 
 Next, to set up a database, click the Storage tab from your Vercel dashboard. Select Connect Store → Create New → Postgres → Continue.
 
@@ -433,12 +430,14 @@ Navigate to your code editor and rename the .env.example file to .env. Paste in 
 Important: Go to your .gitignore file and make sure .env are in the ignored files to prevent your database secrets from being exposed on GitHub.
 
 Finally, run:
+
 ```bash 
 npm i @vercel/postgres
 ```
+
 in your terminal to install the Vercel Postgres SDK.
 
-### Seed your database
+## Seed your database
 
 Now that your database has been created, let's seed it with some initial data. This will allow you to have some data to work with as you build the dashboard.
 
@@ -467,7 +466,7 @@ Now, run npm run seed. You should see some console.log messages in your terminal
 >
 > If you continue to experience issues while seeding your Verce Postgres database, please open a discussion on GitHub.
 
-### Exploring your database
+## Exploring your database
 
 Let's see what your database looks like. Go back to Vercel, and click Data in the sidenav.
 
@@ -475,13 +474,13 @@ In this section, you'll find the four new tables: users, customers, invoices, re
 
 ![Data postgres Vercel](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fdatabase-tables.png&w=1080&q=75&dpl=dpl_9qQQdh4D2Yn6grRGdiVN5fQKpqX7)
 
-### Executing queries
+## Executing queries
 
 You can switch to the "query" tab to interact with your database. This section supports standard SQL commands. For instance, inputting DROP TABLE customers will delete "customers" table along with all its data - so be careful!
 
 ---
 
-## Fetching Data
+# Fetching Data
 
 Let's discuss the different ways you can fetch data from your database, including using SQL and alternatives.
 
@@ -499,36 +498,38 @@ Here are the topics we’ll cover
 
 - How to implement parallel data fetching using a JavaScript Pattern.
 
-### Choosing how to fetch data
+## Choosing how to fetch data
 
-#### API layer
+### API layer
+
 APIs are an intermediary layer between your application code and database. There are a few cases where you might use an API:
 
-If you're using 3rd party services that provide an API.
-If you're fetching data from the client, you want to have an API layer that runs on the server to avoid exposing your database secrets to the client.
+If you're using 3rd party services that provide an API.  
+If you're fetching data from the client, you want to have an API layer that runs on the server to avoid exposing your database secrets to the client.  
 In Next.js, you can create API endpoints using Route Handlers.
 
-#### Database queries
+### Database queries
+
 When you're creating a full-stack application, you'll also need to write logic to interact with your database. For relational databases like Postgres, you can do this with SQL, or an ORM like Prisma.
 
 There are a few cases where you have to write database queries:
 
-When creating your API endpoints, you need to write logic to interact with your database.
+When creating your API endpoints, you need to write logic to interact with your database.  
 If you are using React Server Components (fetching data on the server), you can skip the API layer, and query your database directly without risking exposing your database secrets to the client.
 
 There are a few other ways you can fetch data with React and Next.js. We won't cover all of them due to time. If you'd like to learn more, check out the Data Fetching docs.
 
 In the next section, we'll explore how you can fetch data using a relatively new approach: async React Server Components.
 
-### Using Server Components to fetch data
+## Using Server Components to fetch data
 
 By default, Next.js applications use React Server Components, and you can opt into Client Components when needed. There are a few benefits to fetching data with React Server Components:
 
-Server Components execute on the server, so you can keep expensive data fetches and logic on the server and only send the result to the client.
-Server Components support promises, providing a simpler solution for asynchronous tasks like data fetching. You can use async/await syntax without reaching out for useEffect, useState or data fetching libraries.
+Server Components execute on the server, so you can keep expensive data fetches and logic on the server and only send the result to the client.  
+Server Components support promises, providing a simpler solution for asynchronous tasks like data fetching. You can use async/await syntax without reaching out for useEffect, useState or data fetching libraries.  
 Since Server Components execute on the server, you can query the database directly without an additional API layer.
 
-### Using SQL
+## Using SQL
 
 For your dashboard project, you'll write database queries using the Vercel Postgres SDK and SQL. There are a few reasons why we'll be using SQL:
 
@@ -542,7 +543,7 @@ For your dashboard project, you'll write database queries using the Vercel Postg
 
 > You can call sql inside any Server Component. But to allow you to navigate the components more easily, we've kept all the data queries in the data.ts file, and you can import them into the components.
 
-## Fetching data for the dashboard overview page
+# Fetching data for the dashboard overview page
 
 ```tsx
 import { Card } from '@/app/ui/dashboard/cards';
@@ -577,14 +578,14 @@ export default async function Page() {
 
 In the code above:
 
-Page is an async component. This allows you to use await to fetch data.
+Page is an async component. This allows you to use await to fetch data.  
 There are also 3 components which receive data: \<Card\>, \<RevenueChart\>, and \<LatestInvoices\>. They are currently commented out to prevent the application from erroring.
 
-### Fetching data for \<RevenueChart/\>
+## Fetching data for \<RevenueChart/\>
 
 To fetch data for the \<RevenueChart/\> component, import the fetchRevenue function from data.ts and call it inside your component
 
-### Fetching data for \<LatestInvoices/\>
+## Fetching data for \<LatestInvoices/\>
 
 For the <LatestInvoices /> component, we need to get the latest 5 invoices, sorted by date.
 
@@ -604,7 +605,7 @@ const data = await sql<LatestInvoiceRaw>`
   LIMIT 5`;
 ```
 
-### Fetch data for the \<Card\> components
+## Fetch data for the \<Card\> components
 
 Now it's your turn to fetch data for the \<Card\> components. The cards will display the following data:
 
@@ -639,14 +640,13 @@ Great! You've now fetched all the data for the dashboard overview page. Your pag
 
 ![Dashboard Data Fetching](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fcomplete-dashboard.png&w=1080&q=75&dpl=dpl_9qQQdh4D2Yn6grRGdiVN5fQKpqX7)
 
-
 However... there are two things you need to be aware of:
 
 1. The data requests are unintentionally blocking each other, creating a request waterfall.
 
 2. By default, Next.js prerenders routes to improve performance, this is called Static Rendering. So if your data changes, it won't be reflected in your dashboard.
 
-## Request Waterfalls
+# Request Waterfalls
 
 What are request waterfalls?
 
@@ -658,7 +658,7 @@ This pattern is not necessarily bad. There may be cases where you want waterfall
 
 However, this behavior can also be unintentional and impact performance.
 
-## Parallel data fetching
+# Parallel data fetching
 
 A common way to avoid waterfalls is to initiate all data requests at the same time - in parallel.
 
@@ -677,7 +677,7 @@ However, there is one disadvantage of using this JavaScript pattern: what happen
 
 ---
 
-## Static and Dynamic Rendering
+# Static and Dynamic Rendering
 
 Learn about how you can use to further optimize data fetching with PPR and Streaming.
 
@@ -700,7 +700,7 @@ Here are the topics we’ll cover
 
 - The limitation of fetching data at request time.
 
-### What is Static Rendering?
+## What is Static Rendering?
 
 With static rendering, data fetching and rendering happens on the server at build time (when you deploy) or during revalidation. The result can then be distributed and cached (stored) in a Content Delivery Network (CDN).
 
@@ -708,14 +708,14 @@ With static rendering, data fetching and rendering happens on the server at buil
 
 Whenever a user visits your application, the cached result is served. There are a couple of benefits of static rendering:
 
-Faster Websites - Prerendered content can be cached. This ensures that users around the world can access your website's content more quickly and reliably.
-Reduced Server Load - Because the content is cached, your server does not have to dynamically generate content for each user request.
-SEO - Prerendered content is easier for search engine crawlers to index, as the content is already available when the page loads. This can lead to improved search engine rankings.
+Faster Websites - Prerendered content can be cached. This ensures that users around the world can access your website's content more quickly and reliably.  
+Reduced Server Load - Because the content is cached, your server does not have to dynamically generate content for each user request.  
+SEO - Prerendered content is easier for search engine crawlers to index, as the content is already available when the page loads. This can lead to improved search engine rankings.  
 Static rendering is useful for UI with no data or data that is shared across users, such as a static blog post or a product page. It might not be a good fit for a dashboard that has data that is regularly updated.
 
 The opposite of static rendering is dynamic rendering.
 
-### What is Dynamic Rendering?
+## What is Dynamic Rendering?
 
 With dynamic rendering, content is rendered on the server for each user at request time (when the user visits the page). There are a couple of benefits of dynamic rendering:
 
@@ -725,7 +725,7 @@ With dynamic rendering, content is rendered on the server for each user at reque
 
 - Request Time Information - Dynamic rendering allows you to access information that can only be known at request time, such as cookies or the URL search parameters.
 
-## Making the dashboard dynamic
+# Making the dashboard dynamic
 
 By default, @vercel/postgres doesn't set its own caching semantics. This allows the framework to set its own static and dynamic behavior.
 
@@ -748,7 +748,7 @@ export async function fetchRevenue() {
 
 > Note: unstable_noStore is an experimental API and may change in the future. If you prefer to use a stable API in your own projects, you can also use the Segment Config Option export const dynamic = "force-dynamic".
 
-### Simulating a Slow Data Fetch
+## Simulating a Slow Data Fetch
 
 Making the dashboard dynamic is a good first step. However... there is still one problem we mentioned in the previous chapter. What happens if one data request is slower than all the others?
 
@@ -782,7 +782,7 @@ Which brings us to a common challenge developers have to solve:
 
 With dynamic rendering, your application is only as fast as your slowest data fetch.
 
-## Streaming
+# Streaming
 
 In the previous chapter, you made your dashboard page dynamic, however, we discussed how the slow data fetches can impact the performance of your application. Let's look at how you can improve the user experience when there are slow data requests.
 
@@ -800,7 +800,7 @@ Here are the topics we’ll cover
 
 - Where to place Suspense boundaries in your application.
 
-### What is streaming?
+## What is streaming?
 
 Streaming is a data transfer technique that allows you to break down a route into smaller "chunks" and progressively stream them from the server to the client as they become ready.
 
@@ -823,20 +823,21 @@ A few things are happening here:
 
 1. loading.tsx is a special Next.js file built on top of Suspense, it allows you to create loading UI to show as a replacement while page content loads.
 2. Since <Sidebar> is static, it's shown immediately. The user can interact with <Sidebar> while the dynamic content is loading.
-3. The user doesn't have to wait for the page to finish loading before navigating away (this is called interruptable navigation).
+3. The user doesn't have to wait for the page to finish loading before navigating away (this is called interruptible navigation).
 
 Congratulations! You've just implemented Streaming with Next.js!
 
 But we can do more to improve the user experience. Let's show a skeleton instead of the Loading… text.
 
-### Adding loading skeletons
+## Adding loading skeletons
+
 A loading skeleton is a simplified version of the UI. Many websites use them as a placeholder (or fallback) to indicate to users that the content is loading. Any UI you embed into loading.tsx will be embedded as part of the static file, and sent first. Then, the rest of the dynamic content will be streamed in from the server to the client.
 
 Inside your loading.tsx file, import a new component called \<DashboardSkeleton\>
 
 ![Dashboard skeleton](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Floading-page-with-skeleton.png&w=1080&q=75&dpl=dpl_7RpAeq75qgcdEqm8L4GS5sRJ7t3C)
 
-### Fixing the loading skeleton bug with route groups
+## Fixing the loading skeleton bug with route groups
 
 Right now, your loading skeleton will apply to the invoices and customers pages as well.
 
@@ -852,7 +853,7 @@ Route groups allow you to organize files into logical groups without affecting t
 
 Here, you're using a route group to ensure loading.tsx only applies to your dashboard overview page. However, you can also use route groups to separate your application into sections (e.g. (marketing) routes and (dashboard) routes) or by teams for larger applications.
 
-## Streaming a component
+# Streaming a component
 
 So far, you're streaming a whole page. But, instead, you can be more granular and stream specific components using React Suspense.
 
@@ -868,12 +869,12 @@ Now refresh the page, you should see the dashboard information almost immediatel
 
 ![Dashboard skeleton Streaming](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Floading-revenue-chart.png&w=1080&q=75&dpl=dpl_7RpAeq75qgcdEqm8L4GS5sRJ7t3C)
 
-Practice: Streaming \<LatestInvoices\>
+Practice: Streaming \<LatestInvoices\>  
 Now it's your turn! Practice what you've just learned by streaming the \<LatestInvoices\> component.
 
 Move fetchLatestInvoices() down from the page to the \<LatestInvoices\> component. Wrap the component in a \<Suspense\> boundary with a fallback called \<LatestInvoicesSkeleton\>.
 
-## Grouping components
+# Grouping components
 
 Great! You're almost there, now you need to wrap the \<Card\> components in Suspense. You can fetch data for each individual card, but this could lead to a popping effect as the cards load in, this can be visually jarring for the user.
 
@@ -888,7 +889,7 @@ In your page.tsx file:
 3. Import a new wrapper component called \<CardWrapper /\>.
 4. Wrap \<CardWrapper /\> in Suspense.
 
-### Deciding where to place your Suspense boundaries
+## Deciding where to place your Suspense boundaries
 
 Where you place your Suspense boundaries will depend on a few things:
 
@@ -908,7 +909,7 @@ Don't be afraid to experiment with Suspense and see what works best, it's a powe
 
 ---
 
-## Partial Prerendering (Optional)
+# Partial Prerendering (Optional)
 
 Partial Prerendering is an experimental feature introduced in Next.js 14. The content of this page may be updated as the feature progresses in stability. You may want to skip this chapter if you prefer to not use experimental features. This chapter is not required to complete the course.
 
@@ -920,7 +921,7 @@ Here are the topics we’ll cover
 
 - How Partial Prerendering works.
 
-### Combining Static and Dynamic Content
+## Combining Static and Dynamic Content
 
 Currently, if you call a dynamic function inside your route (e.g. noStore(), cookies(), etc), your whole route becomes dynamic.
 
@@ -932,7 +933,7 @@ Going back to your dashboard page, what components would you consider static vs.
 
 ![Dashboard Combining Static and Dynamic Content](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fdashboard-static-dynamic-components.png&w=1920&q=75&dpl=dpl_7RpAeq75qgcdEqm8L4GS5sRJ7t3C)
 
-### What is Partial Prerendering?
+## What is Partial Prerendering?
 
 In Next.js 14, there is a preview of a new compiler optimization called Partial Prerendering. Partial Prerendering is an experimental feature that allows you to render a route with a static loading shell, while keeping some parts dynamic. In other words, you can isolate the dynamic parts of a route.
 
@@ -946,7 +947,7 @@ When a user visits a route:
 
 This is different from how your application behaves today, where entire routes are either fully static or dynamic.
 
-### How does Partial Prerendering work?
+## How does Partial Prerendering work?
 
 Partial Prerendering leverages React's Concurrent APIs and uses Suspense to defer rendering parts of your application until some condition is met (e.g. data is loaded).
 
@@ -954,7 +955,7 @@ The fallback is embedded into the initial static file along with other static co
 
 The great thing about Partial Prerendering is that you don't need to change your code to use it. As long as you're using Suspense to wrap the dynamic parts of your route, Next.js will know which parts of your route are static and which are dynamic.
 
-## Summary
+# Summary
 
 To recap, you've done a few things to optimize data fetching in your application, you've:
 
@@ -967,7 +968,7 @@ To recap, you've done a few things to optimize data fetching in your application
 
 ---
 
-## Adding Search and Pagination
+# Adding Search and Pagination
 
 In the previous chapter, you improved your dashboard's initial loading performance with streaming. Now let's move on to the /invoices page, and learn how to add search and pagination!
 
@@ -979,17 +980,17 @@ Here are the topics we’ll cover
 
 - Implement search and pagination using URL search params.
 
-### /dashboard/invoices/page.tsx
+## /dashboard/invoices/page.tsx
 
 Spend some time familiarizing yourself with the page and the components you'll be working with:
 
-\<Search/\> allows users to search for specific invoices.
-\<Pagination/\> allows users to navigate between pages of invoices.
+\<Search/\> allows users to search for specific invoices.  
+\<Pagination/\> allows users to navigate between pages of invoices.  
 \<Table/\> displays the invoices.
 
 Your search functionality will span the client and the server. When a user searches for an invoice on the client, the URL params will be updated, data will be fetched on the server, and the table will re-render on the server with the new data.
 
-### Why use URL search params?
+## Why use URL search params?
 
 As mentioned above, you'll be using URL search params to manage the search state. This pattern may be new if you're used to doing it with client side state.
 
@@ -999,7 +1000,7 @@ There are a couple of benefits of implementing search with URL params:
 - Server-Side Rendering and Initial Load: URL parameters can be directly consumed on the server to render the initial state, making it easier to handle server rendering.
 - Analytics and Tracking: Having search queries and filters directly in the URL makes it easier to track user behavior without requiring additional client-side logic.
 
-### Adding the search functionality
+## Adding the search functionality
 
 There are three Next.js client hooks that you'll use to implement the search functionality:
 
@@ -1016,17 +1017,17 @@ Here's a quick overview of the implementation steps:
 3. Keep the URL in sync with the input field.
 4. Update the table to reflect the search query.
 
-1. Capture the user's input
+5. Capture the user's input
 
 Go into the \<Search\> Component (/app/ui/search.tsx), and you'll notice:
 
-"use client" - This is a Client Component, which means you can use event listeners and hooks.
-\<input\> - This is the search input.
+"use client" - This is a Client Component, which means you can use event listeners and hooks.  
+\<input\> - This is the search input.  
 Create a new handleSearch function, and add an onChange listener to the \<input\> element.
 
 onChange will invoke handleSearch whenever the input value changes.
 
-2. Update the URL with the search params
+1. Update the URL with the search params
 
 Import the useSearchParams hook from 'next/navigation', and assign it to a variable.
 
@@ -1042,9 +1043,9 @@ Import useRouter and usePathname from 'next/navigation', and use the replace met
 
 Here's a breakdown of what's happening:
 
-`${pathname}` is the current path, in your case, `"/dashboard/invoices".`
-As the user types into the search bar, `params.toString()` translates this input into a URL-friendly format.
-The replace`(${pathname}?${params.toString()});` command updates the URL with the user's search data. For example, `/dashboard/invoices?query=lee` if the user searches for "lee".
+`${pathname}` is the current path, in your case, `"/dashboard/invoices".`  
+As the user types into the search bar, `params.toString()` translates this input into a URL-friendly format.  
+The replace`(${pathname}?${params.toString()});` command updates the URL with the user's search data. For example, `/dashboard/invoices?query=lee` if the user searches for "lee".  
 The URL is updated without reloading the page, thanks to Next.js's client-side navigation
 
 ```tsx
@@ -1072,7 +1073,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 }
 ```
 
-3. Keeping the URL and input in sync
+1. Keeping the URL and input in sync
 
 To ensure the input field is in sync with the URL and will be populated when sharing, you can pass a defaultValue to input by reading from searchParams.
 
@@ -1093,7 +1094,7 @@ To ensure the input field is in sync with the URL and will be populated when sha
 >
 >However, since you're not using state, you can use defaultValue. This means the native input will manage its own state. This is okay since you're saving the search query to the URL instead of state.
 
-4. Updating the table
+1. Updating the table
 
 Finally, you need to update the table component to reflect the search query.
 
@@ -1114,7 +1115,7 @@ If you navigate to the \<Table\> Component, you'll see that the two props, query
 >As a general rule, if you want to read the params from the client, use the useSearchParams() hook as this avoids having to go back to the server.
 
 
-### Best practice: Debouncing
+## Best practice: Debouncing
 
 Congratulations! You've implemented search with Next.js! But there's something you can do to optimize it.
 
@@ -1134,12 +1135,12 @@ You can implement debouncing in a few ways, including manually creating your own
 npm i use-debounce
 ```
 
-In your \<Search\> Component, import a function called useDebouncedCallback
+In your \<Search\> Component, import a function called useDebouncedCallback  
 This function will wrap the contents of handleSearch, and only run the code after a specific time once the user has stopped typing (300ms).
 
 By debouncing, you can reduce the number of requests sent to your database, thus saving resources. 🖥️
 
-## Adding pagination
+# Adding pagination
 
 After introducing the search feature, you'll notice the table displays only 6 invoices at a time. This is because the fetchFilteredInvoices() function in data.ts returns a maximum of 6 invoices per page.
 
@@ -1151,7 +1152,7 @@ In /dashboard/invoices/page.tsx, import a new function called fetchInvoicesPages
 
 fetchInvoicesPages returns the total number of pages based on the search query. For example, if there are 12 invoices that match the search query, and each page displays 6 invoices, then the total number of pages would be 2.
 
-Next, pass the totalPages prop to the \<Pagination/\> component.
+Next, pass the totalPages prop to the \<Pagination/\> component.  
 Import the usePathname and useSearchParams hooks. We will use this to get the current page and set the new page.
 
 Here's a breakdown of what's happening:
@@ -1162,7 +1163,7 @@ Here's a breakdown of what's happening:
 
 Finally, when the user types a new search query, you want to reset the page number to 1. You can do this by updating the handleSearch function in your \<Search\> component.
 
-### Summary
+## Summary
 
 Congratulations! You've just implemented search and pagination using URL Params and Next.js APIs.
 
@@ -1176,7 +1177,7 @@ These patterns are different from what you may be used to when working with clie
 
 ---
 
-## Mutating Data
+# Mutating Data
 
 Learn how to mutate data with Server Actions.
 
@@ -1198,13 +1199,13 @@ Here are the topics we’ll cover
 
 - How to use the React’s useFormStatus hook for optimistic updates.
 
-### What are Server Actions?
+## What are Server Actions?
 
 React Server Actions allow you to run asynchronous code directly on the server. They eliminate the need to create API endpoints to mutate your data. Instead, you write asynchronous functions that execute on the server and can be invoked from your Client or Server Components.
 
 Security is a top priority for web applications, as they can be vulnerable to various threats. This is where Server Actions come in. They offer an effective security solution, protecting against different types of attacks, securing your data, and ensuring authorized access. Server Actions achieve this through techniques like POST requests, encrypted closures, strict input checks, error message hashing, and host restrictions, all working together to significantly enhance your app's safety.
 
-### Using forms with Server Actions
+## Using forms with Server Actions
 
 In React, you can use the action attribute in the \<form\> element to invoke actions. The action will automatically receive the native formData object, containing the captured data.
 
@@ -1227,13 +1228,13 @@ export default function Page() {
 
 An advantage of invoking a Server Action within a Server Component is progressive enhancement - forms work even if JavaScript is disabled on the client.
 
-### Next.js with Server Actions
+## Next.js with Server Actions
 
 Server Actions are also deeply integrated with Next.js caching. When a form is submitted through a Server Action, not only can you use the action to mutate data, but you can also revalidate the associated cache using APIs like **revalidatePath** and **revalidateTag.**
 
 Let's see how it all works together!
 
-Creating an invoice
+Creating an invoice  
 Here are the steps you'll take to create a new invoice:
 
 1. Create a form to capture the user's input.
@@ -1243,7 +1244,7 @@ Here are the steps you'll take to create a new invoice:
 5. Insert the data and handle any errors.
 6. Revalidate the cache and redirect the user back to invoices page.
 
-1. Create a new route and form
+7. Create a new route and form
 
 To start, inside the /invoices folder, add a new route segment called /create with a page.tsx file:
 
@@ -1263,7 +1264,7 @@ Navigate to the \<Form\> component, and you'll see that the form:
 
 ![Form Invoices create](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fcreate-invoice-page.png&w=1080&q=75&dpl=dpl_FQk1vqJFzbvQf7ciyg5D7QiENdN4)
 
-2. Create a Server Action
+1. Create a Server Action
 
 Great, now let's create a Server Action that is going to be called when the form is submitted.
 
@@ -1289,7 +1290,7 @@ Then, in your \<Form\> component, import the createInvoice from your actions.ts 
 >
 >Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
 
-3. Extract the data from formData
+1. Extract the data from formData
 
 Back in your actions.ts file, you'll need to extract the values of formData, there are a couple of methods you can use. For this example, let's use the .get(name) method.
 
@@ -1323,7 +1324,7 @@ Now that your data is in the shape of an object, it'll be much easier to work wi
 }
 ```
 
-4. Validate and prepare the data
+1. Validate and prepare the data
 
 Before sending the form data to your database, you want to ensure it's in the correct format and with the correct types. If you remember from earlier in the course, your invoices table expects data in the following format:
 
@@ -1339,7 +1340,7 @@ export type Invoice = {
 
 So far, you only have the customer_id, amount, and status from the form.
 
-### Type validation and coercion
+## Type validation and coercion
 
 It's important to validate that the data from your form aligns with the expected types in your database. For instance, if you add a console.log inside your action...
 
@@ -1381,7 +1382,7 @@ Finally, let's create a new date with the format "YYYY-MM-DD" for the invoice's 
 
 `const date = new Date().toISOString().split('T')[0];`
 
-5. Inserting the data into your database
+1. Inserting the data into your database
 
 Now that you have all the values you need for your database, you can create an SQL query to insert the new invoice into your database and pass in the variables:
 
@@ -1396,7 +1397,7 @@ await sql`
 
 Right now, we're not handling any errors. We'll do it in the next chapter. For now, let's move on to the next step.
 
-6. Revalidate and redirect
+1. Revalidate and redirect
 
 Next.js has a **Client-side Router Cache** that stores the route segments in the user's browser for a time. Along with prefetching, this cache ensures that users can quickly navigate between routes while reducing the number of requests made to the server.
 
@@ -1423,7 +1424,7 @@ Congratulations! You've just implemented your first Server Action. Test it out b
 1. You should be redirected to the /dashboard/invoices route on submission.
 2. You should see the new invoice at the top of the table.
 
-### Updating an invoice
+## Updating an invoice
 
 The updating invoice form is similar to the create an invoice form, except you'll need to pass the invoice id to update the record in your database. Let's see how you can get and pass the invoice id.
 
@@ -1435,7 +1436,7 @@ These are the steps you'll take to update an invoice:
 4. Pre-populate the form with the invoice data.
 5. Update the invoice data in your database.
 >
-1. Create a Dynamic Route Segment with the invoice id
+1. Create a Dynamic Route Segment with the invoice id  
 Next.js allows you to create Dynamic Route Segments when you don't know the exact segment name and want to create routes based on data. This could be blog post titles, product pages, etc. You can create dynamic route segments by wrapping a folder's name in square brackets. For example, [id], [post] or [slug].
 
 In your /invoices folder, create a new dynamic route called [id], then a new route called edit with a page.tsx file.
@@ -1444,13 +1445,13 @@ In your \<Table\> component, notice there's a \<UpdateInvoice /\> button that re
 
 Navigate to your \<UpdateInvoice /\> component, and update the href of the Link to accept the id prop. You can use template literals to link to a dynamic route segment.
 
-2. Read the invoice id from page params
+1. Read the invoice id from page params
 
 Notice how it's similar to your /create invoice page, except it imports a different form (from the edit-form.tsx file). This form should be pre-populated with a defaultValue for the customer's name, invoice amount, and status. To pre-populate the form fields, you need to fetch the specific invoice using id.
 
 In addition to searchParams, page components also accept a prop called params which you can use to access the id. Update your \<Page\> component to receive the prop.
 
-3. Fetch the specific invoice
+1. Fetch the specific invoice  
 Then:
 
 - Import a new function called fetchInvoiceById and pass the id as an argument
@@ -1470,14 +1471,14 @@ The URL should also be updated with an id as follows: http://localhost:3000/dash
 >
 >However, if you prefer cleaner URLs, you might prefer to use auto-incrementing keys.
 
-4. Pass the id to the Server Action
+1. Pass the id to the Server Action
 
-Lastly, you want to pass the id to the Server Action so you can update the right record in your database. 
+Lastly, you want to pass the id to the Server Action so you can update the right record in your database.  
 You can pass id to the Server Action using JS bind. This will ensure that any values passed to the Server Action are encoded.
 
 > **Note:** Using a hidden input field in your form also works (e.g. \<input type="hidden" name="id" value={invoice.id} /\>). However, the values will appear as full text in the HTML source, which is not ideal for sensitive data like IDs.
 
-5. Update the invoice data in your database.
+1. Update the invoice data in your database.
 
 Then, in your actions.ts file, create a new action, updateInvoice
 
@@ -1512,14 +1513,13 @@ Similarly to the createInvoice action, here you are:
 1. Extracting the data from formData.
 2. Validating the types with Zod.
 3. Converting the amount to cents.
-3. Passing the variables to your SQL query.
-4. Calling revalidatePath to clear the client cache and make a new server request.
-5. Calling redirect to redirect the user to the invoice's page.
+4. Passing the variables to your SQL query.
+5. Calling revalidatePath to clear the client cache and make a new server request.
+6. Calling redirect to redirect the user to the invoice's page.
 
-## Deleting an invoice
+# Deleting an invoice
 
 To delete an invoice using a Server Action, wrap the delete button in a <form> element and pass the id to the Server Action using bind:
-
 
 ```ts
 import { deleteInvoice } from '@/app/lib/actions';
@@ -1538,14 +1538,14 @@ export async function deleteInvoice(id: string) {
 
 Since this action is being called in the /dashboard/invoices path, you don't need to call redirect. Calling revalidatePath will trigger a new server request and re-render the table.
 
-**Further reading**
+**Further reading**  
 In this chapter, you learned how to use Server Actions to mutate data. You also learned how to use the revalidatePath API to revalidate the Next.js cache and redirect to redirect the user to a new page.
 
 You can also read more about security with Server Actions.
 
 ---
 
-## Handling Errors
+# Handling Errors
 
 Let's explore best practices for mutating data with forms, including error handling and accessibility.
 
@@ -1560,7 +1560,7 @@ Here are the topics we’ll cover
 - How to use the notFound function and not-found file to handle 404 errors (for resources that don’t exist).
 
 
-### Adding try/catch to Server Actions
+## Adding try/catch to Server Actions
 
 First, let's add JavaScript's try/catch statements to your Server Actions to allow you to handle errors gracefully.
 
@@ -1592,7 +1592,7 @@ Seeing these errors are helpful while developing as you can catch any potential 
 
 This is where Next.js error.tsx file comes in.
 
-### Handling all errors with error.tsx
+## Handling all errors with error.tsx
 
 The error.tsx file can be used to define a UI boundary for a route segment. It serves as a catch-all for unexpected errors and allows you to display a fallback UI to your users.
 
@@ -1609,8 +1609,7 @@ When you try to delete an invoice again, you should see the following UI:
 
 ![Error handling delete invoice](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Ferror-page.png&w=1080&q=75&dpl=dpl_Dr17aKMkaNBEHortDHFuuK6oJKA5)
 
-
-### Handling 404 errors with the notFound function
+## Handling 404 errors with the notFound function
 
 Another way you can handle errors gracefully is by using the notFound function. While error.tsx is useful for catching all errors, notFound can be used when you try to fetch a resource that doesn't exist.
 
@@ -1638,10 +1637,9 @@ Refresh the route, and you should now see the following UI:
 
 ![Not Found page](https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2F404-not-found-page.png&w=1080&q=75&dpl=dpl_Dr17aKMkaNBEHortDHFuuK6oJKA5)
 
-
 That's something to keep in mind, notFound will take precedence over error.tsx, so you can reach out for it when you want to handle more specific errors!
 
-Further reading
+Further reading  
 To learn more about error handling in Next.js, check out the following documentation:
 
 - [Error Handling](https://nextjs.org/docs/app/building-your-application/routing/error-handling)
@@ -1651,7 +1649,7 @@ To learn more about error handling in Next.js, check out the following documenta
 
 ---
 
-## Improving Accessibility
+# Improving Accessibility
 
 Let's continue exploring ways to improve your user's experience. You'll learn about server-side form validation and improving accessibility.
 
@@ -1667,13 +1665,13 @@ Here are the topics we’ll cover
 
 - How to use the React useFormState hook to handle form errors, and display them to the user.
 
-### What is accessibility?
+## What is accessibility?
 
 Accessibility refers to designing and implementing web applications that everyone can use, including those with disabilities. It's a vast topic that covers many areas, such as keyboard navigation, semantic HTML, images, colors, videos, etc.
 
 While we won't go in-depth into accessibility in this course, we'll discuss the accessibility features available in Next.js and some common practices to make your applications more accessible.
 
-### Using the ESLint accessibility plugin in Next.js
+## Using the ESLint accessibility plugin in Next.js
 
 By default, Next.js includes the eslint-plugin-jsx-a11y plugin to help catch accessibility issues early. For example, this plugin warns if you have images without alt text, use the aria-* and role attributes incorrectly, and more.
 
@@ -1705,7 +1703,7 @@ npm run lint
 
 There are a couple of rules when using aria attributes, and if you're new to accessibility, it can be tricky to know if you're using them correctly. You can use this plugin to help you along the way.
 
-### Improving form accessibility
+## Improving form accessibility
 
 There are three things we're already doing to improve accessibility in our forms:
 
@@ -1717,13 +1715,13 @@ There are three things we're already doing to improve accessibility in our forms
 
 These practices lay a good foundation for making your forms more accessible to many users. However, they don't address form validation and errors.
 
-## Form validation
+# Form validation
 
 Go to http://localhost:3000/dashboard/invoices/create, and submit an empty form. What happens?
 
 You get an error! This is because you're sending empty form values to your Server Action. You can prevent this by validating your form on the client or the server.
 
-### Client-Side validation
+## Client-Side validation
 
 There are a couple of ways you can validate forms on the client. The simplest would be to rely on the form validation provided by the browser by adding the required attribute to the \<input\> and \<select\> elements in your forms.
 
@@ -1744,7 +1742,7 @@ This approach is generally okay because some ATs support browser validation.
 
 An alternative to client-side validation is server-side validation. Let's see how you can implement it in the next section. For now, delete the required attributes if you added them.
 
-### Server-Side validation
+## Server-Side validation
 
 By validating forms on the server, you can:
 
@@ -1763,8 +1761,8 @@ import { useFormState } from 'react-dom';
 
 Inside your Form Component, the useFormState hook:
 
-Takes two arguments: (action, initialState).
-Returns two values: [state, dispatch] - the form state, and a dispatch function (similar to useReducer)
+Takes two arguments: (action, initialState).  
+Returns two values: [state, dispatch] - the form state, and a dispatch function (similar to useReducer)  
 Pass your createInvoice action as an argument of useFormState, and inside your \<form action={}\> attribute, call dispatch.
 
 ```tsx
@@ -1842,7 +1840,6 @@ If validatedFields isn't successful, we return the function early with the error
 
 Great, now let's display the errors in your form component. Back in the create-form.tsx component, you can access the errors using the form state.
 
-
 In the code above, you're also adding the following aria labels:
 
 - **aria-describedby="customer-error":** This establishes a relationship between the select element and the error message container. It indicates that the container with id="customer-error" describes the select element. Screen readers will read this description when the user interacts with the select box to notify them of errors.
@@ -1867,7 +1864,7 @@ You'll need to:
 
 ---
 
-## Adding Authentication
+# Adding Authentication
 
 Your application is almost ready, in the next chapter, you'll learn how to add authentication to your application using **NextAuth.js**.
 
@@ -1883,21 +1880,21 @@ Here are the topics we’ll cover
 
 - How to use React's `useFormStatus` and `useFormState` to handle pending states and form errors.
 
-### What is authentication?
+## What is authentication?
 
 Authentication is a key part of many web applications today. It's how a system checks if the user is who they say they are.
 
 A secure website often uses multiple ways to check a user's identity for enhanced security. For instance, after entering your username and password, the site may send a verification code to your device or use an external app like Google Authenticator. This 2-factor authentication (2FA) helps increase security. Even if someone learns your password, they can't access your account without your unique token.
 
-### Authentication vs. Authorization
+## Authentication vs. Authorization
 
 In web development, authentication and authorization serve different roles:
 
-Authentication is about making sure the user is who they say they are. You're proving your identity with something you have like a username and password.
-Authorization is the next step. Once a user's identity is confirmed, authorization decides what parts of the application they are allowed to use.
+Authentication is about making sure the user is who they say they are. You're proving your identity with something you have like a username and password.  
+Authorization is the next step. Once a user's identity is confirmed, authorization decides what parts of the application they are allowed to use.  
 So, authentication checks who you are, and authorization determines what you can do or access in the application.
 
-### Creating the login route
+## Creating the login route
 
 Start by creating a new route in your application called /login and paste the following code:
 
@@ -1921,7 +1918,7 @@ export default function LoginPage() {
 }
 ```
 
-### NextAuth.js
+## NextAuth.js
 
 We will be using NextAuth.js to add authentication to your application. NextAuth.js abstracts away much of the complexity involved in managing sessions, sign-in and sign-out, and other aspects of authentication. While you can manually implement these features, the process can be time-consuming and error-prone. NextAuth.js simplifies the process, providing a unified solution for auth in Next.js applications.
 
@@ -1952,7 +1949,7 @@ AUTH_URL=http://localhost:3000/api/auth
 
 For auth to work in production, you'll need to update your environment variables in your Vercel project too. Check out this guide on how to add environment variables on Vercel.
 
-Adding the pages option
+Adding the pages option  
 Create an auth.config.ts file at the root of our project that exports an authConfig object. This object will contain the configuration options for NextAuth.js. For now, it will only contain the pages option:
 
 ```ts
@@ -1967,7 +1964,7 @@ export const authConfig = {
 
 You can use the pages option to specify the route for custom sign-in, sign-out, and error pages. It is not required, but if you don't provide it, NextAuth.js will use its default sign-in, sign-out, and error pages. By adding signIn: '/login' into our pages option, the user will be redirected to our custom login page, rather than the NextAuth.js default page.
 
-### Protecting your routes with Next.js Middleware
+## Protecting your routes with Next.js Middleware
 
 Next, add the logic to protect your routes. This will prevent users from accessing the dashboard pages unless they are logged in.
 
@@ -2011,11 +2008,12 @@ export const config = {
   matcher: ['/((?!api|_next/static|_next/image|.png).*)'],
 };
 ```
+
 Here you're initializing NextAuth.js with the authConfig object and exporting the auth property. You're also using the matcher option from Middleware to specify that it should run on specific paths.
 
 The advantage of employing Middleware for this task is that the protected routes will not even start rendering until the Middleware verifies the authentication, enhancing both the security and performance of your application.
 
-### Password hashing
+## Password hashing
 
 To store passwords securely, you will need to hash them. This process converts the password into a fixed-length string of characters, which appears random, providing a layer of security even if the hash is exposed.
 
@@ -2034,7 +2032,7 @@ export const { auth, signIn, signOut } = NextAuth({
 });
 ```
 
-### Adding Credentials provider
+## Adding Credentials provider
 
 Next, you will need to add the providers option for NextAuth.js. providers is an array where you list different login options such as Google or GitHub. For this course, we will focus on using the Credentials provider only.
 
@@ -2044,7 +2042,7 @@ The Credentials provider allows users to log in with a username and a password.
 >
 >Although we're using the Credentials provider, it's generally recommended to use alternative providers such as OAuth or email providers. See the NextAuth.js docs for a full list of options.
 
-### Adding the sign in functionality
+## Adding the sign in functionality
 
 You can use the authorize function to handle the authentication logic. Similarly to Server Actions, you can use zod to validate the email and password before checking if the user exists in the database and after validating the credentials, create a new getUser function that queries the user from the database.
 
@@ -2052,7 +2050,7 @@ Then, call bcrypt.compare to check if the passwords match.
 
 Finally, if the passwords match you want to return the user, otherwise, return null to prevent the user from logging in.
 
-### Updating the login form
+## Updating the login form
 
 Now you need to connect the auth logic with your login form. In your actions.ts file, create a new action called authenticate. This action should import the signIn function from auth.ts.
 
@@ -2060,7 +2058,7 @@ If there's a 'CredentialSignin' error, you want to return it so that you can sho
 
 Finally, in your login-form.tsx component, you can use React's useFormState to call the server action and handle form errors, and use useFormStatus to handle the pending state of the form.
 
-### Adding the logout functionality
+## Adding the logout functionality
 
 To add the logout functionality, call the signOut function from auth.ts in your \<SideNav\> component.
 
@@ -2073,7 +2071,7 @@ Now, try it out. You should be able to log in and out of your application using 
 
 ---
 
-## Adding Metadata
+# Adding Metadata
 
 Finish your application by learning how to add metadata in preparation for sharing.
 
@@ -2091,15 +2089,15 @@ Here are the topics we’ll cover
 
 - How to add a favicon using metadata.
 
-### What is metadata?
+## What is metadata?
 
 In web development, metadata provides additional details about a webpage. Metadata is not visible to the users visiting the page. Instead, it works behind the scenes, embedded within the page's HTML, usually within the <head> element. This hidden information is crucial for search engines and other systems that need to understand your webpage's content better.
 
-### Why is metadata important?
+## Why is metadata important?
 
 Metadata plays a significant role in enhancing a webpage's SEO, making it more accessible and understandable for search engines and social media platforms. Proper metadata helps search engines effectively index webpages, improving their ranking in search results. Additionally, metadata like Open Graph improves the appearance of shared links on social media, making the content more appealing and informative for users.
 
-## Types of metadata
+# Types of metadata
 
 There are various types of metadata, each serving a unique purpose. Some common types include:
 
@@ -2135,7 +2133,7 @@ Favicon Metadata: This metadata links the favicon (a small icon) to the webpage,
 <link rel="icon" href="path/to/favicon.ico" />
 ```
 
-### Adding metadata
+## Adding metadata
 
 Next.js has a Metadata API that can be used to define your application metadata. There are two ways you can add metadata to your application:
 
@@ -2152,7 +2150,7 @@ You have the flexibility to use these files for static metadata, or you can gene
 
 With both these options, Next.js will automatically generate the relevant \<head\> elements for your pages.
 
-### Favicon and Open Graph image
+## Favicon and Open Graph image
 
 In your /public folder, you'll notice you have two images: favicon.ico and opengraph-image.jpg.
 
@@ -2162,7 +2160,7 @@ After doing this, Next.js will automatically identify and use these files as you
 
 > Good to know: You can also create dynamic OG images using the `ImageResponse` constructor.
 
-### Page title and descriptions
+## Page title and descriptions
 
 You can also include a metadata object from any layout.js or page.js file to add additional page information like title and description. Any metadata in layout.js will be inherited by all pages that use it.
 
@@ -2205,7 +2203,7 @@ export const metadata: Metadata = {
 };
 ```
 
-### Practice: Adding metadata
+## Practice: Adding metadata
 
 Now that you've learned about metadata, practice by adding titles to your other pages:
 
@@ -2216,18 +2214,3 @@ Now that you've learned about metadata, practice by adding titles to your other 
 5. /dashboard/invoices/[id]/edit page.
 
 The Next.js Metadata API is powerful and flexible, giving you full control over your application's metadata. Here, we've shown you how to add some basic metadata, but you can add multiple fields, including keywords, robots, canonical, and more. Feel free to explore the [documentation](https://nextjs.org/docs/app/api-reference/functions/generate-metadata), and add any additional metadata you want to your application.
-
----
-
-## Next Steps
-
-Congratulations! You've completed the Next.js dashboard course where you learned about the main features of Next.js and best practices for building web applications.
-
-But this is just the beginning—Next.js has many other features. It's designed to help you build small side projects, your next startup idea, or even large-scale applications with your team.
-
-Here are some resources to continue exploring Next.js:
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Next.js Templates](https://vercel.com/templates?framework=next.js)
-- [Next.js Repository](https://github.com/vercel/next.js)
-- [Vercel YouTube](https://www.youtube.com/@VercelHQ/videos)
