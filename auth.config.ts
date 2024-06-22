@@ -4,6 +4,7 @@ export const authConfig = {
   pages: {
     signIn: '/login',
   },
+  // protecting routes with Next.js Middleware
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
