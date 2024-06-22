@@ -24,6 +24,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
   return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
+
         {/* Customer Name */}
         <div className="mb-4">
           <label htmlFor="customer" className="mb-2 block text-sm font-medium">
@@ -58,6 +59,10 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
         </div>
 
+
+
+
+
         {/* Invoice Amount */}
         <div className="mb-4">
           <label htmlFor="amount" className="mb-2 block text-sm font-medium">
@@ -79,6 +84,10 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
         </div>
 
+
+
+
+
         {/* Invoice Status */}
         <fieldset>
           <legend className="mb-2 block text-sm font-medium">
@@ -98,7 +107,8 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   htmlFor="pending"
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
                 >
-                  Pending <ClockIcon className="h-4 w-4" />
+                  Pending
+                <ClockIcon className="h-4 w-4" />
                 </label>
               </div>
               <div className="flex items-center">
@@ -120,6 +130,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
         </fieldset>
       </div>
+      
       <div className="mt-6 flex justify-end gap-4">
         <Link
           href="/dashboard/invoices"
@@ -132,3 +143,4 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
     </form>
   );
 }
+                

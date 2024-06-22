@@ -58,8 +58,6 @@ export async function authenticate(
 
 export async function deleteInvoice(id: string) {
   throw new Error('Failed to Delete Invoice');
-
-  // Unreachable code block
     try {
       await sql `DELETE FROM invoices WHERE id = ${id}`;
       revalidatePath('/dashboard/invoices');
@@ -67,7 +65,7 @@ export async function deleteInvoice(id: string) {
     } catch (error) {
       return { message: 'Database Error: Failed to Delete Invoice.' };
     }
-}
+};
 
 
 
@@ -105,7 +103,7 @@ export async function updateInvoice(
  
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
-}
+};
 
 
 
@@ -127,6 +125,7 @@ export type State = {
 
 export async function createInvoice(prevState: State, formData: FormData) {
   // Validate form using Zod
+  // const rawFormData = {
   const validatedFields = CreateInvoice.safeParse({
     customerId: formData.get('customerId'),
     amount: formData.get('amount'),
@@ -162,4 +161,4 @@ export async function createInvoice(prevState: State, formData: FormData) {
   // Revalidate the cache for the invoices page and redirect the user.
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
-}
+};
