@@ -12,6 +12,10 @@ import { formatCurrency } from './utils';
 
 import { unstable_noStore as noStore } from 'next/cache';
 
+
+
+
+
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
@@ -21,12 +25,12 @@ noStore();
     // We artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    console.log('Fetching revenue data...');
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    // console.log('Fetching revenue data...');
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    console.log('Data fetch completed after 3 seconds.');
+    // console.log('Data fetch completed after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -34,6 +38,10 @@ noStore();
     throw new Error('Failed to fetch revenue data.');
   }
 }
+
+
+
+
 
 export async function fetchLatestInvoices() {
   noStore();
@@ -55,6 +63,10 @@ export async function fetchLatestInvoices() {
     throw new Error('Failed to fetch the latest invoices.');
   }
 }
+
+
+
+
 
 export async function fetchCardData() {
   noStore();
@@ -129,6 +141,10 @@ export async function fetchFilteredInvoices(
   }
 }
 
+
+
+
+
 export async function fetchInvoicesPages(query: string) {
   noStore();
   try {
@@ -150,6 +166,10 @@ export async function fetchInvoicesPages(query: string) {
     throw new Error('Failed to fetch total number of invoices.');
   }
 }
+
+
+
+
 
 export async function fetchInvoiceById(id: string) {
   noStore();
@@ -178,6 +198,10 @@ export async function fetchInvoiceById(id: string) {
   }
 }
 
+
+
+
+
 export async function fetchCustomers() {
   try {
     const data = await sql<CustomerField>`
@@ -195,6 +219,10 @@ export async function fetchCustomers() {
     throw new Error('Failed to fetch all customers.');
   }
 }
+
+
+
+
 
 export async function fetchFilteredCustomers(query: string) {
   noStore();
@@ -229,6 +257,10 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+
+
+
+
 
 export async function getUser(email: string) {
   try {
