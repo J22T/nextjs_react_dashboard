@@ -1,6 +1,6 @@
 Be advised. To properly login, you MUST use the following credentials:
 - Email: `user@nextmail.com`
-- Password: `12456`
+- Password: `123456`
 
 otherwise, you will be denied access because this project was built and designed to showcase authentication purposes for only one account.
 
